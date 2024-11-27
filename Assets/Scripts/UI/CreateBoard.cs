@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.Rendering.CameraUI;
-using static UnityEngine.Rendering.DebugUI.Table;
+//using static UnityEditor.Rendering.CameraUI;
+//using static UnityEngine.Rendering.DebugUI.Table;
 using static UnityEngine.XR.ARSubsystems.XRCpuImage;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
@@ -16,7 +16,7 @@ public class CreateBoard : MonoBehaviour
     [SerializeField] int widthBoard = 10, heightBoard = 10;
     [SerializeField] OpenAI_Manager openAI;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] MapSpliter MapSpliter;
+    [SerializeField] MapSpliter mapSpliter;
     bool sended = false;
 
     // Start is called before the first frame update
@@ -34,7 +34,8 @@ public class CreateBoard : MonoBehaviour
         //    {
         //        heightBoard = (int)v;
         //    });
-        Invoke("CreateLLMBoard", 3);
+        openAI = FindObjectOfType<OpenAI_Manager>();
+        mapSpliter = FindObjectOfType<MapSpliter>();
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class CreateBoard : MonoBehaviour
     {
         if (openAI.responseBoard != "" && sended)
         {
-            MapSpliter.IncomingMessage(openAI.responseBoard);
+            mapSpliter.IncomingMessage(openAI.responseBoard);
             sended = false;
         }
         //text.text = openAI.response;
