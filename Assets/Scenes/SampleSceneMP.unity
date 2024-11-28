@@ -5886,6 +5886,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 730881348}
+    - targetCorrespondingSourceObject: {fileID: 4208948368886931613, guid: 72aacf5ad018ef84f8c2f1796da09345,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540815515}
   m_SourcePrefab: {fileID: 100100000, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
 --- !u!1 &730881342 stripped
 GameObject:
@@ -12084,6 +12088,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534226840}
   m_CullTransparentMesh: 1
+--- !u!114 &1540815514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4208948368886931614, guid: 72aacf5ad018ef84f8c2f1796da09345,
+    type: 3}
+  m_PrefabInstance: {fileID: 730881341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730881344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36197789fe322a468a6fa54bda65658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1540815515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730881344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44719b1daa70e78429dfd31b324b7f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayBeamer: {fileID: 1540815514}
 --- !u!1 &1545067873
 GameObject:
   m_ObjectHideFlags: 0
