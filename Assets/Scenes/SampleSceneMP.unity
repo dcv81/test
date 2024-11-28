@@ -5882,6 +5882,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 730881349}
+    - targetCorrespondingSourceObject: {fileID: 4208948367510053347, guid: 72aacf5ad018ef84f8c2f1796da09345,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 730881350}
     - targetCorrespondingSourceObject: {fileID: 4208948368886931613, guid: 72aacf5ad018ef84f8c2f1796da09345,
         type: 3}
       insertIndex: -1
@@ -6021,6 +6025,19 @@ MonoBehaviour:
   preventControllerTrackingFallback: 1
   useOverideMaterialForHands: 0
   handOverideMaterial: {fileID: 0}
+--- !u!114 &730881350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730881345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44719b1daa70e78429dfd31b324b7f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayBeamer: {fileID: 0}
 --- !u!1 &744348585
 GameObject:
   m_ObjectHideFlags: 0
@@ -12543,6 +12560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44719b1daa70e78429dfd31b324b7f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayBeamer: {fileID: 0}
 --- !u!1 &1617237094
 GameObject:
   m_ObjectHideFlags: 0

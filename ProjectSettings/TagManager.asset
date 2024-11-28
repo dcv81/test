@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AnchorScale
   - Grabber
+  - Button
   layers:
   - Default
   - TransparentFX

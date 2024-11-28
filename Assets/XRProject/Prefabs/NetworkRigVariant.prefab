@@ -352,6 +352,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UISelection
       objectReference: {fileID: 0}
+    - target: {fileID: 1623252171165878518, guid: 707fc1bfcbaa0f142ad26e8dd6c63733,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2224551846148056631, guid: 707fc1bfcbaa0f142ad26e8dd6c63733,
         type: 3}
       propertyPath: m_LocalPosition.z
