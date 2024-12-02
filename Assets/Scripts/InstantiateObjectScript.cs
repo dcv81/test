@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Fusion;
 
-public class InstantiateObjectScript : MonoBehaviour
+public class InstantiateObjectScript : NetworkBehaviour
 {
-    [SerializeField] GameObject[] maps;
-    [SerializeField] GameObject[] assambleAreas;
-    [SerializeField] GameObject card;
+    [SerializeField] NetworkPrefabRef[] maps;
+    [SerializeField] NetworkPrefabRef[] assambleAreas;
+    [SerializeField] NetworkPrefabRef card;
+    [SerializeField] GameObject UIInit;
+    [Networked] public string textToShow { get; set; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+
     }
 
 
@@ -28,13 +30,24 @@ public class InstantiateObjectScript : MonoBehaviour
 
     public void InstantiateMap(int numberMap)
     {
-        Instantiate(maps[numberMap]);
+        Runner.Spawn(maps[numberMap]);
+        //Instantiate(maps[numberMap]);
     }
 
-    public void InstantiateCard(string text, Vector3 position)
+    public void InstantiateUI(GameObject pleaceToInstantiate, bool isMaster)
     {
-        GameObject obj = Instantiate(card, position, Quaternion.identity);
-        GameObject.Find("InfoCard").GetComponent<TextMeshProUGUI>().text = text;
+        if (isMaster)
+        {
+            GameObject obj = Instantiate(UIInit, pleaceToInstantiate.transform);
+        }
+
+    }
+
+    public void InstantiateCard(Vector3 position)
+    {
+        //GameObject obj = Instantiate(card, position, Quaternion.identity);
+        Runner.Spawn(card, position, Quaternion.identity);
+        GameObject.Find("InfoCard").GetComponent<TextMeshProUGUI>().text = textToShow;
     }
 
     public void IsntantiateObject(string letter, Vector3 position, Quaternion quaternion)
@@ -42,19 +55,23 @@ public class InstantiateObjectScript : MonoBehaviour
         print(letter);
         if (letter == "S")
         {
-            GameObject obj = Instantiate(assambleAreas[0], position, quaternion);
+            //GameObject obj = Instantiate(assambleAreas[0], position, quaternion);
+            Runner.Spawn(assambleAreas[0], position, quaternion);
         }
         else if (letter == "E")
         {
-            GameObject obj = Instantiate(assambleAreas[1], position, quaternion);
+            //GameObject obj = Instantiate(assambleAreas[1], position, quaternion);
+            Runner.Spawn(assambleAreas[1], position, quaternion);
         }
         else if (letter == "P")
         {
-            GameObject obj = Instantiate(assambleAreas[2], position, quaternion);
+            //GameObject obj = Instantiate(assambleAreas[2], position, quaternion);
+            Runner.Spawn(assambleAreas[2], position, quaternion);
         }
         else if (letter == "C")
         {
-            GameObject obj = Instantiate(assambleAreas[3], position, quaternion);
+            //GameObject obj = Instantiate(assambleAreas[3], position, quaternion);
+            Runner.Spawn(assambleAreas[3], position, quaternion);
         }
     }
 }

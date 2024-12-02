@@ -4013,6 +4013,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8814608142485645323, guid: 61132d80baa3c024d995c0e48ddf27df,
         type: 3}
+      propertyPath: actualSessionProperties.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814608142485645323, guid: 61132d80baa3c024d995c0e48ddf27df,
+        type: 3}
       propertyPath: onWillConnect.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -4025,8 +4030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onWillConnect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8990444609956476185, guid: e47db615c9ecc53449b4b6a3ddc1c986,
-        type: 3}
+      objectReference: {fileID: 708911601}
     - target: {fileID: 8814608142485645323, guid: 61132d80baa3c024d995c0e48ddf27df,
         type: 3}
       propertyPath: onWillConnect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -4035,7 +4039,7 @@ PrefabInstance:
     - target: {fileID: 8814608142485645323, guid: 61132d80baa3c024d995c0e48ddf27df,
         type: 3}
       propertyPath: onWillConnect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AssignedPlayer
+      value: OnConnectPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8814608142485645323, guid: 61132d80baa3c024d995c0e48ddf27df,
         type: 3}
@@ -5468,6 +5472,8 @@ GameObject:
   - component: {fileID: 708911597}
   - component: {fileID: 708911596}
   - component: {fileID: 708911599}
+  - component: {fileID: 708911600}
+  - component: {fileID: 708911601}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -5488,16 +5494,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps:
-  - {fileID: 5517810777716932183, guid: a5e515fcc02d98948830471ff741ce31, type: 3}
-  - {fileID: 741862896559861425, guid: bd2d6e5c0bec3ad4caa6bdccd71c9c12, type: 3}
-  - {fileID: 6076005431096454665, guid: 12fd5fc97d2d8544486a6d5e13839f51, type: 3}
-  - {fileID: 3708258152600411130, guid: 297f0f52ba9e8ca4bb73dc435539617b, type: 3}
+  - RawGuidValue: 1a78acb5dcc200048bb4debdc3ab1270
+  - RawGuidValue: d9b1626e5b9be984d8cf75ccb0c0f96e
+  - RawGuidValue: e97af646bec83c348ae1ad3e671bff3c
+  - RawGuidValue: 13022920e1a115b44b3b7a749cf60498
   assambleAreas:
-  - {fileID: 8708008598213260687, guid: f49359fba0db4204d9043d1931935f86, type: 3}
-  - {fileID: 8381568615278247936, guid: 902bc9d2c1a131945879fb0ab5f7dbfa, type: 3}
-  - {fileID: 6951266879531186069, guid: 7cac527f720f48f40923c828fb128e10, type: 3}
-  - {fileID: 3028507437269034974, guid: 6f02dfccb39147f4eab35c5df6a4d294, type: 3}
-  card: {fileID: 1576673002840195556, guid: 80b65994d0f188841bb3f7e46da73ac8, type: 3}
+  - RawGuidValue: f49359fba0db4204d9043d1931935f86
+  - RawGuidValue: 902bc9d2c1a131945879fb0ab5f7dbfa
+  - RawGuidValue: 7cac527f720f48f40923c828fb128e10
+  - RawGuidValue: 6f02dfccb39147f4eab35c5df6a4d294
+  card:
+    RawGuidValue: 80b65994d0f188841bb3f7e46da73ac8
+  UIInit: {fileID: 1525090257436090351, guid: 707fc1bfcbaa0f142ad26e8dd6c63733, type: 3}
+  _textToShow: 
 --- !u!4 &708911597
 Transform:
   m_ObjectHideFlags: 0
@@ -5527,6 +5536,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiateObjectScript: {fileID: 708911596}
   information: []
+--- !u!114 &708911600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708911595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 131432459
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 708911596}
+--- !u!114 &708911601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708911595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3758600c3b925064fa45956fafaedc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720999869
 GameObject:
   m_ObjectHideFlags: 0

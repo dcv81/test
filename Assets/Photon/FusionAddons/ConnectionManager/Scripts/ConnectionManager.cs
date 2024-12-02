@@ -235,16 +235,19 @@ namespace Fusion.Addons.ConnectionManagerAddon
             if (runner.Topology == Topologies.ClientServer)
             {
                 OnPlayerJoinedHostMode(runner, player);
+                FindObjectOfType<NetworkControl>().OnConnectPlayer(runner, player);
             }
             else
             {
                 OnPlayerJoinedSharedMode(runner, player);
+                FindObjectOfType<NetworkControl>().OnConnectPlayer(runner, player);
             }
         }
         public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) {
             if (runner.Topology == Topologies.ClientServer)
             {
                 OnPlayerLeftHostMode(runner, player);
+                FindObjectOfType<NetworkControl>().OnDisconectPlayer();
             }
         }
 #endregion

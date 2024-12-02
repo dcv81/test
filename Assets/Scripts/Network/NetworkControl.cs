@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Fusion;
+using Fusion.Sockets;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
-public class NetworkControl : NetworkBehaviour
-{
-    [Networked] public bool IsMainPlayer { get; set; }
-    private static bool mainPlayerAssigned = false;
+public class NetworkControl : MonoBehaviour
+{ 
 
-    public override void Spawned()
+    [Networked] public int connectedPeople { get; set; } = 0;
+
+    public void OnConnectPlayer(NetworkRunner runner, PlayerRef player)
     {
-        if (Runner.IsServer) // Solo el servidor asigna el rol de jugador principal
-        {
-            if (!mainPlayerAssigned)
-            {
-                // Asigna el rol de jugador principal al primer jugador que se conecta
-                IsMainPlayer = true;
-                mainPlayerAssigned = true;
-                Debug.Log("Jugador principal asignado");
-            }
-        }
+
+        if (connectedPeople == 0)
+            FindObjectOfType<NetworkPlayerControl>().SetMasterPlayer(true);
         else
-        {
-            Debug.Log("No es el servidor, no se asigna rol");
-        }
+            FindObjectOfType<NetworkPlayerControl>().SetMasterPlayer(false);
+        connectedPeople++;
     }
+
+    public void OnDisconectPlayer()
+    {
+        connectedPeople--;
+    }
+
+
+
 }
