@@ -12,7 +12,7 @@ public class NetworkControl : MonoBehaviour
 
     [Networked] public int connectedPeople { get; set; } = 0;
 
-    public void OnConnectPlayer(NetworkRunner runner, PlayerRef player)
+    public void OnConnectPlayer()
     {
 
         if (connectedPeople == 0)
